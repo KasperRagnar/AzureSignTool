@@ -44,7 +44,7 @@ $sdkBinPath = Join-Path -Path $sdkPath -ChildPath $archDirName
 $objDir = Join-Path -Path $rootDir -ChildPath 'obj'
 $outDir = Join-Path -Path $rootDir -ChildPath 'out'
 
-pushd $rootDir
+Push-Location $rootDir
 
 Remove-Item -Path $objDir -Recurse -Force -ErrorAction SilentlyContinue
 New-Item -Path $objDir -ItemType Directory
@@ -87,4 +87,4 @@ dotnet publish -f net10.0 -c Release -r win-x64 -p:ContinuousIntegrationBuild=tr
 Copy-Item -Path "$objDir\AzureSignTool-x64\AzureSignTool.exe" -Destination "$outDir\AzureSignTool-x64.exe"
 Copy-Item -Path "$objDir\AzureSignTool-arm64\AzureSignTool.exe" -Destination "$outDir\AzureSignTool-arm64.exe"
 
-popd
+Pop-Location
