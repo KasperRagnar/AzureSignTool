@@ -41,6 +41,7 @@ namespace AzureSignTool
                 new VersionOption(version: GetVersion(), prototype: "version"),
                 new HelpOption(),
                 new SignCommand(),
+                new SignWithCommand(),
                 new AboutCommand(),
             };
 
